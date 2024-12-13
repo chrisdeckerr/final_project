@@ -274,16 +274,38 @@ print(f"Probability that this person is a LinkedIn User: {probs[0][1]}")
 st.title("LinkedIn User Prediction")
 
 # Education Input
-education = st.selectbox("Education level", options=["High School Diploma", "College Degree", "Graduate Degree"])
-if education == "High School Diploma":
-    education_label = "High School Diploma"
+education = st.selectbox("Education level", options=["Less than high school", "High school incompletee", "High school graduate", "Some college, no degree", "Two-year associate degree from a college or university", "Four-year college or university degree/Bachelor’s degree", "Some postgraduate or professional schooling, no postgraduate degree", "Postgraduate or professional degree, including master’s, doctorate, medical or law degree", "Don’t know", "Refused"])
+if education == "Less than high school":
+    education_label = "Less than high school."
     education = 1
-elif education == "College Degree":
-    education_label = "College Degree"
+elif education == "High school incomplete":
+    education_label = "High school incomplete"
     education = 2
-else:
-    education_label = "Graduate Degree"
+elif education == "High school graduate":
+    education_label = "High school graduate"
     education = 3
+elif education == "Some college, no degree":
+    education_label = "Some college, no degree"
+    education = 4
+elif education == "Two-year associate degree from a college or university":
+    education_label = "Two-year associate degree from a college or university"
+    education = 5
+elif education == "Four-year college or university degree/Bachelor’s degree":
+    education_label = "Four-year college or university degree/Bachelor’s degree"
+    education = 6
+elif education == "Some postgraduate or professional schooling, no postgraduate degree":
+    education_label = "Some postgraduate or professional schooling, no postgraduate degree"
+    education = 7
+elif education == "Postgraduate or professional degree, including master’s, doctorate, medical or law degree":
+    education_label = "Postgraduate or professional degree, including master’s, doctorate, medical or law degree"
+    education = 8
+elif education == "Don’t know":
+    education_label = "Don’t know"
+    education = 98
+elif education == "Refused":
+    education_label = "Refused"
+    education = 99
+    
 
 # Income Input
 income = st.slider(label="Income (1=low, 9=high)", min_value=1, max_value=9, value=5)
